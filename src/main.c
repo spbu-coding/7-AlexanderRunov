@@ -57,10 +57,11 @@ int main(int argc, char *argv[]) {
     while (!feof(file)) {
         char *s = (char *) calloc(1001, sizeof(char));
         fgets(s, 1000, file);
-        for (unsigned int i = strlen(s) - 1; i > 0; i--)
+       int strlen_s = (int) strlen(s);
+        for (int i = strlen_s - 1; i > 0; i--)
             if (s[i] == 10 || s[i] == 13 || s[i] == '.' || s[i] == ',' || s[i] == ';' ||
                 s[i] == ':' || s[i] == '!' || s[i] == '?')
-                for (unsigned int j = i; s[j] != 0; j++)
+                for (int j = i; s[j] != 0; j++)
                     s[j] = s[j + 1];
         if (pHead == NULL) {
             pHead = malloc(sizeof(StringItem));
