@@ -24,8 +24,8 @@ struct StringItem *radix1(StringItem *pList, unsigned int iDigit) {
         temp->next = NULL;
 
         unsigned char c = (unsigned char) temp->str[iDigit];
-        *ppNextItem[c] = temp;
-        ppNextItem[c] = &temp->next;
+        *ppNextItem[255 - c] = temp;
+        ppNextItem[255 - c] = &temp->next;
     }
 
     StringItem *pResult = NULL;
