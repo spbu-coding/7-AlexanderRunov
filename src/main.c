@@ -63,6 +63,7 @@ int main(int argc, char *argv[]) {
                 s[i] == ':' || s[i] == '!' || s[i] == '?')
                 for (int j = i; s[j] != 0; j++)
                     s[j] = s[j + 1];
+                if (strlen(s) > 0)
         if (pHead == NULL) {
             pHead = malloc(sizeof(StringItem));
             pHead->str = s;
